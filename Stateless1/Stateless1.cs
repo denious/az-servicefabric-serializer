@@ -9,8 +9,6 @@ using Microsoft.ServiceFabric.Services.Communication.Runtime;
 using Microsoft.ServiceFabric.Services.Remoting;
 using Microsoft.ServiceFabric.Services.Remoting.V2.FabricTransport.Runtime;
 using Microsoft.ServiceFabric.Services.Runtime;
-using Stateless1.MSDocs;
-using Stateless1.suchiagicha;
 using Stateless1.washraf;
 
 namespace Stateless1
@@ -59,9 +57,7 @@ namespace Stateless1
                             c,
                             this,
                             null,
-                            //new MSDocs.ServiceRemotingJsonSerializationProvider());
-                            //new suchiagicha.ServiceRemotingJsonSerializationProvider());
-                            new washraf.ServiceRemotingJsonSerializationProvider());
+                            new ServiceRemotingJsonSerializationProvider());
                     })
             };
         }
