@@ -46,19 +46,14 @@ namespace Stateless1
 
         protected override IEnumerable<ServiceInstanceListener> CreateServiceInstanceListeners()
         {
-            //return this.CreateServiceRemotingInstanceListeners();
-
             return new[]
             {
                 new ServiceInstanceListener(
-                    (c) =>
-                    {
-                        return new FabricTransportServiceRemotingListener(
-                            c,
-                            this,
-                            null,
-                            new ServiceRemotingJsonSerializationProvider());
-                    })
+                    (c) => new FabricTransportServiceRemotingListener(
+                        c,
+                        this,
+                        null,
+                        new ServiceRemotingJsonSerializationProvider()))
             };
         }
     }
